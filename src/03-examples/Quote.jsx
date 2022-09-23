@@ -1,14 +1,28 @@
 import PropTypes from "prop-types";
+import { useLayoutEffect, useRef, useState } from "react";
 
 export const Quote = ({quote, author}) => {
-  return (
-        <figure className="text-end">
-            <blockquote className="blockquote">
-                { quote }
-            </blockquote>
+    const quoteRef = useRef();
 
-            <figcaption className="blockquote-footer">{ author }</figcaption>
-        </figure>
+    const [boxSize, setBoxSize] = useState({width: 0, height: 0});
+
+    useLayoutEffect(() => {
+        const {width, height} = quoteRef.current.getBoundingClientRect();
+        setBoxSize({width, height});
+    }, [])
+
+  return (
+        <>
+            <figure className="text-end" style={{display: 'flex'}}>
+                <blockquote className="blockquote" ref={quoteRef}>
+                    { quote }
+                </blockquote>
+
+                <figcaption className="blockquote-footer">{ author }</figcaption>
+            </figure>
+
+            <p>{ JSON.stringify({boxSize})}</p>
+        </>
     )
 }
 
