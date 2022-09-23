@@ -6,7 +6,7 @@ export const IncrementBtn = memo(({increment}) => {
     return (
         <button
             className="btn btn-primary"
-            onClick={increment}
+            onClick={()=>{increment(10)}}
         >
             Increment
         </button>
