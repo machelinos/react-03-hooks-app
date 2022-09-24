@@ -12,10 +12,13 @@ import { Padre } from './07-tarea-memo/07-tarea-memo/Padre'
 // import { CounterApp } from './01-useState/CounterApp'
 // import { CounterCustomHook } from './01-useState/CounterCustomHook'
 // import { HooksApp } from './HooksApp'
+import './08-useReducer/intro-reducer';
+
 import './index.css'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+
+/* ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Padre />
   </React.StrictMode>
-)
+) */
