@@ -16,13 +16,22 @@ export const TodoApp = () => {
         localStorage.setItem('todos', JSON.stringify(todos));
     }, [todos]);
 
-    const handleNewTodo = (newTodo)=>{
+    const handleNewTodo = (newTodo) => {
         const addTodoAction = {
             type: '[TODO] Add new todo',
             payload: newTodo
         }
 
         dispatch(addTodoAction);
+    }
+
+    const handleDeleteTodo = (id) => {
+        const deleteTodoAction = {
+            type: '[TODO] Delete todo',
+            payload: id
+        }
+
+        dispatch(deleteTodoAction);
     }
     
 
@@ -33,7 +42,7 @@ export const TodoApp = () => {
 
         <div className="row">
             <div className="col-7">
-                <TodoList todos={todos} />
+                <TodoList todos={todos} onDeleteTodo={handleDeleteTodo} />
 
             </div>
 
