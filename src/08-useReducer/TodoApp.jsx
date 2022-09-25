@@ -33,6 +33,16 @@ export const TodoApp = () => {
 
         dispatch(deleteTodoAction);
     }
+
+    const handleSetCompleted = (id) => {
+        console.log({id});
+        const setCompletedAction = {
+            type: '[TODO] Set todo completed',
+            payload: id
+        }
+
+        dispatch(setCompletedAction);
+    }
     
 
     return (
@@ -42,7 +52,7 @@ export const TodoApp = () => {
 
         <div className="row">
             <div className="col-7">
-                <TodoList todos={todos} onDeleteTodo={handleDeleteTodo} />
+                <TodoList todos={todos} onDeleteTodo={handleDeleteTodo} onSetCompleted={handleSetCompleted} />
 
             </div>
 
