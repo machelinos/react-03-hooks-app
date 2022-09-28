@@ -4,13 +4,14 @@ export const TodoItem = ({todo, onDeleteItem, onSetCompleted}) => {
     className="list-group-item d-flex justify-content-between"
     >
         <span
+          aria-label="span"
           className={"align-self-center"+(todo.done ? " text-decoration-line-through":"")}
           onClick={()=>{onSetCompleted(todo.id)}}
         >{todo.description}</span>
         <button
           className="btn btn-danger"
           onClick={()=>{onDeleteItem(todo.id)}}
-        >Borrar</button>
+        >Delete</button>
     </li>
 
   )
