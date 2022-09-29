@@ -14,7 +14,7 @@ export const LoginPage = () => {
 
   return (
     <>
-        <h1>Login</h1>
+        <h1>Login Page</h1>
         <hr />
   
         <pre aria-label="pre">
