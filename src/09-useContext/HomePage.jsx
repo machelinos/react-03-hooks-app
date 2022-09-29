@@ -8,7 +8,7 @@ export const HomePage = () => {
         <h1>Home { user?.name }</h1>
         <hr />
 
-        <pre>
+        <pre aria-label="pre">
           {
             user && JSON.stringify(user)
           }

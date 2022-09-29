@@ -6,7 +6,7 @@ export const LoginPage = () => {
 
   const handleClick = ()=>{
     setUser({
-      id: new Date().getTime(),
+      id: 1,
       name: 'Juan',
       email: 'juan@yo.com'
     })
@@ -17,7 +17,7 @@ export const LoginPage = () => {
         <h1>Login</h1>
         <hr />
   
-        <pre>
+        <pre aria-label="pre">
           {
             user && JSON.stringify(user)
           }
